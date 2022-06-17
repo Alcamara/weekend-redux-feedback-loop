@@ -4,6 +4,7 @@ import './App.css';
 
 //components
 import FeedBackFeeling from '../FeedBackFeeling/FeedBackFeeling';
+import FeedBackUnderstanding from '../FeedBackUnderstanding/FeedBackUnderstanding';
 
 function App() {
 
@@ -15,6 +16,9 @@ function App() {
       </header>
       {/* Feeling Question */}
       <FeedBackFeeling/>
+
+      {/* Understanding Question */}
+      <FeedBackUnderstanding/>
     </div>
   );
 }
