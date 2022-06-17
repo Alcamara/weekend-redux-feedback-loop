@@ -7,6 +7,7 @@ import FeedBackFeeling from '../FeedBackFeeling/FeedBackFeeling';
 import FeedBackUnderstanding from '../FeedBackUnderstanding/FeedBackUnderstanding';
 import FeedBackSupported from '../FeedBackSupported/FeedBackSupported';
 import FeedBackComment from '../FeedBackComment/FeedBackComment';
+import FeedBackReview from '../FeedBackReview/FeedBackReview';
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
 
       {/* Comment Question */}
       <FeedBackComment />
+
+      {/* Review Page */}
+      <FeedBackReview/>
     </div>
   );
 }
