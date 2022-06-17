@@ -1,8 +1,8 @@
 import { useState } from "react"
-
+import { useHistory } from "react-router-dom"
 
 export default function FeedBackFeeling(){
-
+    const history = useHistory()
     const [feelingRating,setFeelingRating] = useState()
 
     return(
@@ -13,7 +13,13 @@ export default function FeedBackFeeling(){
             type="number" 
             min='0' 
             max='5' />
-            <button>NEXT</button>
+            <button
+                onClick={()=>{
+                    history.push('/question2')
+                }}
+            >
+                NEXT
+            </button>
         </div>
     )
 }
