@@ -6,6 +6,7 @@ import './App.css';
 import FeedBackFeeling from '../FeedBackFeeling/FeedBackFeeling';
 import FeedBackUnderstanding from '../FeedBackUnderstanding/FeedBackUnderstanding';
 import FeedBackSupported from '../FeedBackSupported/FeedBackSupported';
+import FeedBackComment from '../FeedBackComment/FeedBackComment';
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
 
       {/* Support Question */}
       <FeedBackSupported/>
+
+      {/* Comment Question */}
+      <FeedBackComment />
     </div>
   );
 }
