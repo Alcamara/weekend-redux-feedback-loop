@@ -5,7 +5,7 @@ export default function FeedBackUnderstanding(){
 
     const history = useHistory()
 
-    const [understandingTxt, setUnderstandingTxt] = useState()
+    const [understandingTxt, setUnderstandingTxt] = useState('')
 
     return(
         <div>

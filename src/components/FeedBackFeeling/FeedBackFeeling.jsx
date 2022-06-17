@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 
 export default function FeedBackFeeling(){
     const history = useHistory()
-    const [feelingRating,setFeelingRating] = useState()
+    const [feelingRating,setFeelingRating] = useState(0)
 
     return(
         <div>

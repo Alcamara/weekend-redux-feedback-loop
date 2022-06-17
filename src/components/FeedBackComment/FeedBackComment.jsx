@@ -5,7 +5,7 @@ export default function FeedBackComment(){
 
     const history = useHistory()
 
-    const [txt,setTxt] = useState()
+    const [txt,setTxt] = useState('')
 
     return(
         <div>
