@@ -5,6 +5,7 @@ export default function FeedBackUnderstanding(){
         <div>
             <h2>how well are your understanding the content?</h2>
             <input type="text" />
+            <button>NEXT</button>
         </div>
     )
 }
