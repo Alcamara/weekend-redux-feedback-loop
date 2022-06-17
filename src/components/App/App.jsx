@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Link, Route } from 'react-router-dom';
 
 //components
+import FeedbackWelcome from '../FeedbackWelcome/FeedbackWelcome';
 import FeedBackFeeling from '../FeedBackFeeling/FeedBackFeeling';
 import FeedBackUnderstanding from '../FeedBackUnderstanding/FeedBackUnderstanding';
 import FeedBackSupported from '../FeedBackSupported/FeedBackSupported';
@@ -12,26 +14,49 @@ import FeedBackReview from '../FeedBackReview/FeedBackReview';
 function App() {
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
-      </header>
-      {/* Feeling Question */}
-      <FeedBackFeeling/>
 
-      {/* Understanding Question */}
-      <FeedBackUnderstanding/>
+    <Router>
+        <div className='App'>
+          
 
-      {/* Support Question */}
-      <FeedBackSupported/>
+          <header className='App-header'>
+            <h1 className='App-title'>Feedback!</h1>
+            <h4>Don't forget it!</h4>
+          </header>
 
-      {/* Comment Question */}
-      <FeedBackComment />
+          <Route exact path='/'>
+            {/* Welcome page */}
+             <FeedbackWelcome/>
+          </Route>
+          
+          <Route exact path='/question1'>
+            {/* Feeling Questionn page */}
+            <FeedBackFeeling/>
+          </Route>
 
-      {/* Review Page */}
-      <FeedBackReview/>
-    </div>
+          <Route exact path='/question2'>
+            {/* Understanding Question page */}
+            <FeedBackUnderstanding/>
+          </Route>
+
+          <Route exact path='/question3'>
+            {/* Support Question page*/}
+            <FeedBackSupported/>
+          </Route>
+
+          <Route exact path='/question4'>
+            {/* Comment Question page*/}
+            <FeedBackComment />
+          </Route>
+
+          <Route exact path='/review'>
+            {/* Review Page */}
+            <FeedBackReview/>
+          </Route>
+
+          
+        </div>
+    </Router>
   );
 }
 

@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 export default function FeedBackUnderstanding(){
+
+    const history = useHistory()
 
     const [understandingTxt, setUnderstandingTxt] = useState()
 
@@ -12,7 +15,13 @@ export default function FeedBackUnderstanding(){
                 setUnderstandingTxt(evt.target.value)
             }} 
             type="text" />
-            <button>NEXT</button>
+            <button
+                onClick={()=>{
+                    history.push('/question3')
+                }}
+            >
+                NEXT
+                </button>
         </div>
     )
 }

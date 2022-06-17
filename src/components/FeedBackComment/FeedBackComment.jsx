@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 export default function FeedBackComment(){
+
+    const history = useHistory()
 
     const [txt,setTxt] = useState()
 
@@ -12,7 +15,13 @@ export default function FeedBackComment(){
                 setTxt(evt.target.value)
             }} 
             type="text" />
-            <button>NEXT</button>
+            <button
+                onClick={()=>{
+                    history.push('/review')
+                }}
+            >
+                NEXT
+            </button>
         </div>
     )
 }

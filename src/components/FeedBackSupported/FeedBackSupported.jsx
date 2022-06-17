@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 
 
 export default function FeedBackSupported(){
     const [supportRating,setSupportRating] = useState(0)
 
+    const history = useHistory()
 
     return (
         <div>
@@ -16,7 +18,13 @@ export default function FeedBackSupported(){
             type="range" 
             min='0' 
             max='5'/>
-            <button>NEXT</button>
+            <button
+                onClick={()=>{
+                    history.push('/question4')
+                }}
+            >
+                NEXT
+            </button>
         </div>
     )
 }
