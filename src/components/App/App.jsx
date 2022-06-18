@@ -10,6 +10,7 @@ import FeedBackUnderstanding from '../FeedBackUnderstanding/FeedBackUnderstandin
 import FeedBackSupported from '../FeedBackSupported/FeedBackSupported';
 import FeedBackComment from '../FeedBackComment/FeedBackComment';
 import FeedBackReview from '../FeedBackReview/FeedBackReview';
+import FeedBackThankYou from '../FeedBackThankYou/FeedBackThankYou';
 
 function App() {
 
@@ -52,6 +53,11 @@ function App() {
           <Route exact path='/review'>
             {/* Review Page */}
             <FeedBackReview/>
+          </Route>
+
+          <Route exact path='/thankyou'>
+            {/* Thank You page */}
+            <FeedBackThankYou/>
           </Route>
 
           
