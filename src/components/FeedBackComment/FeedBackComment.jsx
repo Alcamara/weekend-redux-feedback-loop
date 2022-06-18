@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export default function FeedBackComment(){
 
-    const history = useHistory()
-
-    const [txt,setTxt] = useState('')
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const [txt,setTxt] = useState('');
 
     return(
         <div>
@@ -17,6 +18,10 @@ export default function FeedBackComment(){
             type="text" />
             <button
                 onClick={()=>{
+                    dispatch({
+                        type: 'ADD_COMMENT_FEEDBACK',
+                        payload: txt
+                    })
                     history.push('/review')
                 }}
             >
