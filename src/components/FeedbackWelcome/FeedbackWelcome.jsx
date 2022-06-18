@@ -8,7 +8,7 @@ export default function FeedbackWelcome(){
     return (
         <div>
             <h2>Welcome To Feedback</h2>
-            <h4>Where you opinions matter</h4>
+            <h4>Where your opinions matter</h4>
             <p>Click below to start survey</p>
             <button
                 onClick={()=>{

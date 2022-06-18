@@ -18,24 +18,33 @@ export default function FeedBackSupported(){
             type="range" 
             min='0' 
             max='5'/>
-            <button
-                onClick={()=>{
-                   if(Number(supportRating)!== 0){
+            <div>
+                <button
+                    onClick={()=>{
+                        history.push('/question2')
+                    }}
+                >
+                    PREVIOUS 
+                </button>
+                <button
+                    onClick={()=>{
+                    if(Number(supportRating)!== 0){
 
-                    dispatch({
-                        type: 'ADD_SUPPORT_FEEDBACK',
-                        payload: Number(supportRating)
-                    })
+                        dispatch({
+                            type: 'ADD_SUPPORT_FEEDBACK',
+                            payload: Number(supportRating)
+                        })
 
-                    history.push('/question4')
+                        history.push('/question4')
 
-                   } else {
-                    swal('Please enter a rating 1 - 5')
-                   }
-                }}
-            >
-                NEXT
+                    } else {
+                        swal('Please enter a rating 1 - 5')
+                    }
+                    }}
+                >
+                    NEXT
             </button>
+            </div>
         </div>
     )
 }

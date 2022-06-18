@@ -11,7 +11,7 @@ export default function FeedBackUnderstanding(){
 
     return(
         <div>
-            <h2>how well are your understanding the content?</h2>
+            <h2>How well are you understanding the content?</h2>
             <input
             min='0'
             max='5'
@@ -19,21 +19,32 @@ export default function FeedBackUnderstanding(){
                 setUnderstandingRating(evt.target.value)
             }} 
             type="NUMBER" />
-            <button
-                onClick={()=>{
-                   if(Number(understandingRating)!== 0){
-                        dispatch({
-                            type: 'ADD_UNDERSTANDING_FEEDBACK',
-                            payload: Number(understandingRating)
-                        })
-                        history.push('/question3')
-                   } else{
-                    swal('Please enter a rating 1 - 5')
-                   }
-                }}
-            >
-                NEXT
+            <div>
+                {/* previous button */}
+                <button
+                    onClick={()=>{
+                        history.push('/question1')
+                    }}
+                    >
+                    PREVIOUS 
                 </button>
+                {/* next button */}
+                <button
+                    onClick={()=>{
+                    if(Number(understandingRating)!== 0){
+                            dispatch({
+                                type: 'ADD_UNDERSTANDING_FEEDBACK',
+                                payload: Number(understandingRating)
+                            })
+                            history.push('/question3')
+                    } else{
+                        swal('Please enter a rating 1 - 5')
+                    }
+                    }}
+                >
+                    NEXT
+                    </button>
+            </div>
         </div>
     )
 }
