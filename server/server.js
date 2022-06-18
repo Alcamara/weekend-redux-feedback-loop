@@ -9,7 +9,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
+app.post('/feedback',(req,res)=>{
+    console.log(req.body);
 
+    const insertQuery = `
+        INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+        VALUES ($1, $2, $3, '$);
+    `
+})
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

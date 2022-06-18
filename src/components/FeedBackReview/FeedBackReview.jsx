@@ -11,7 +11,13 @@ export default function FeedBackReview(){
     function submitFeedback(){
         axios({
             url: '/feedback',
-            method:'POST'
+            method:'POST',
+            data:{
+                feeling: feedback.feeling,
+                understanding: feedback.understanding,
+                support: feedback.support,
+                comments: feedback.comment
+            }
         }).then(()=>{
             history.push('/thankyou')
         }).catch((err)=>{
