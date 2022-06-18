@@ -20,7 +20,7 @@ export default function FeedBackUnderstanding(){
                 onClick={()=>{
                     dispatch({
                         type: 'ADD_UNDERSTANDING_FEEDBACK',
-                        payload: understandingTxt
+                        payload: Number(understandingTxt)
                     })
                     history.push('/question3')
                 }}
