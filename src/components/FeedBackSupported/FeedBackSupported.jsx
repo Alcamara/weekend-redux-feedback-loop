@@ -20,11 +20,18 @@ export default function FeedBackSupported(){
             max='5'/>
             <button
                 onClick={()=>{
+                   if(Number(supportRating)!== 0){
+
                     dispatch({
                         type: 'ADD_SUPPORT_FEEDBACK',
                         payload: Number(supportRating)
                     })
+
                     history.push('/question4')
+
+                   } else {
+                    swal('Please enter a rating 1 - 5')
+                   }
                 }}
             >
                 NEXT

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import swal from 'sweetalert';
 
 export default function FeedBackFeeling(){
     const dispatch = useDispatch()
@@ -17,11 +18,18 @@ export default function FeedBackFeeling(){
             max='5' />
             <button
                 onClick={()=>{
-                    dispatch({
-                        type: 'ADD_FEELING_FEEDBACK',
-                        payload: Number(feelingRating)
-                    })
-                    history.push('/question2')
+                    if(Number(feelingRating)!== 0){
+
+                        dispatch({
+                            type: 'ADD_FEELING_FEEDBACK',
+                            payload: Number(feelingRating)
+                        })
+
+                        history.push('/question2')}
+
+                    else{
+                        swal('Please enter a rating 1 - 5')
+                    }
                 }}
             >
                 NEXT
