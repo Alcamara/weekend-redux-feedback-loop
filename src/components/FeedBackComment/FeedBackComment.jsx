@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import swal from "sweetalert";
 
 export default function FeedBackComment(){
 
@@ -18,11 +19,16 @@ export default function FeedBackComment(){
             type="text" />
             <button
                 onClick={()=>{
+                   if(txt != ''){
+
                     dispatch({
                         type: 'ADD_COMMENT_FEEDBACK',
                         payload: txt
                     })
                     history.push('/review')
+                   } else{
+                        swal('Please enter a comment')
+                   }
                 }}
             >
                 NEXT
