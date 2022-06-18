@@ -18,7 +18,7 @@ export default function FeedBackFeeling(){
             <button
                 onClick={()=>{
                     dispatch({
-                        type: ADD_FEELING_FEEDBACK,
+                        type: 'ADD_FEELING_FEEDBACK',
                         payload: feelingRating
                     })
                     history.push('/question2')

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux";
 
 export default function FeedBackUnderstanding(){
-
+    const dispatch = useDispatch()
     const history = useHistory()
 
     const [understandingTxt, setUnderstandingTxt] = useState('')
@@ -17,6 +18,10 @@ export default function FeedBackUnderstanding(){
             type="NUMBER" />
             <button
                 onClick={()=>{
+                    dispatch({
+                        type: 'ADD_UNDERSTANDING_FEEDBACK',
+                        payload: understandingTxt
+                    })
                     history.push('/question3')
                 }}
             >
