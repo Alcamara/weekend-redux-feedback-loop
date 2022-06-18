@@ -25,6 +25,8 @@ const feedbackReducer = (state = feedbackObj , action) =>{
         case 'ADD_COMMENT_FEEDBACK':
             state.comment = action.payload
             break;
+        case 'CLEAR_FEEDBACK':
+            return {}
     }
 
     return state;
