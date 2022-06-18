@@ -14,7 +14,7 @@ export default function FeedBackUnderstanding(){
              onChange={(evt)=>{
                 setUnderstandingTxt(evt.target.value)
             }} 
-            type="text" />
+            type="NUMBER" />
             <button
                 onClick={()=>{
                     history.push('/question3')
