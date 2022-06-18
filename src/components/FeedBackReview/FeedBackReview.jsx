@@ -34,13 +34,22 @@ export default function FeedBackReview(){
                 <h3>Support: <span>{feedback.support}</span></h3>
                 <h3>Comment: <span>{feedback.comment}</span></h3>
             </div>
-            <button
-                onClick={()=>{
-                    submitFeedback()
-                }}
-            >
-                SUBMIT
-            </button>
+            <div>
+                <button
+                    onClick={()=>{
+                        history.push('/question4')
+                    }}
+                    >
+                    PREVIOUS 
+                </button>
+                <button
+                    onClick={()=>{
+                        submitFeedback()
+                    }}
+                >
+                    SUBMIT
+                </button>
+            </div>
         </div>
     )
 }

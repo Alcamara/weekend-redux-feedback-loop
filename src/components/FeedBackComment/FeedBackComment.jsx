@@ -17,22 +17,29 @@ export default function FeedBackComment(){
                 setTxt(evt.target.value)
             }} 
             type="text" />
-            <button
-                onClick={()=>{
-                   if(txt != ''){
+            <div>
+                <button
+                    onClick={()=>{
+                        history.push('/question3')
+                    }}
+                >
+                    PREVIOUS 
+                </button>
+                <button
+                    onClick={()=>{
+                    
 
-                    dispatch({
-                        type: 'ADD_COMMENT_FEEDBACK',
-                        payload: txt
-                    })
-                    history.push('/review')
-                   } else{
-                        swal('Please enter a comment')
-                   }
-                }}
-            >
-                NEXT
-            </button>
+                        dispatch({
+                            type: 'ADD_COMMENT_FEEDBACK',
+                            payload: txt
+                        })
+                        history.push('/review')
+                   
+                    }}
+                    >
+                    NEXT
+                    </button>
+                </div>
         </div>
     )
 }
