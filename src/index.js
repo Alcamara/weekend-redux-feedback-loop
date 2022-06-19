@@ -11,6 +11,15 @@ import logger from 'redux-logger';
 
 const feedbackObj = {}
 
+const feedbackList = (state = [], action) =>{
+
+    if (action.type === 'ADD_DATA') {
+        return  action.payload
+    }
+
+    return state
+}
+
 const feedbackReducer = (state = feedbackObj , action) =>{
     switch(action.type){
         case 'ADD_FEELING_FEEDBACK':
@@ -34,7 +43,8 @@ const feedbackReducer = (state = feedbackObj , action) =>{
 
 const store = createStore(
     combineReducers({
-        feedbackReducer
+        feedbackReducer,
+        feedbackList
     }),
     applyMiddleware(logger)
 )

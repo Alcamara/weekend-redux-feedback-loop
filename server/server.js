@@ -36,8 +36,19 @@ app.post('/feedback',(req,res)=>{
 })
 
 //get route
-app.get('feedback/admin',(req,res)=>{
-    
+app.get('/feedback/admin',(req,res)=>{
+    const sqlSelect = `
+        SELECT * FROM "feedback"
+        ORDER BY "date" ASC;
+    `
+
+    pool.query(sqlSelect)
+        .then((result)=>{
+            res.send(result.rows)
+        }).catch((err)=>{
+            console.log('Get request failed', err);
+            res.sendStatus(500)
+        })
 })
 
 /** ---------- START SERVER ---------- **/
