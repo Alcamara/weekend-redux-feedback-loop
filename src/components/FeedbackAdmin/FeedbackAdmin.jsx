@@ -16,7 +16,7 @@ export default function FeedbackAdmin(){
             field:'understanding', 
             headerName: 'Understanding', 
             type: 'number', 
-            width: 90
+            width: 140
         },
         { 
             field:'support', 
@@ -28,7 +28,7 @@ export default function FeedbackAdmin(){
             field: 'comments',
             headerName: 'Comments',
             sortable: false,
-            width: 160
+            width: 190
         }
     
     ];
@@ -36,7 +36,7 @@ export default function FeedbackAdmin(){
     const feedback = useSelector(store => store.feedbackList)
      console.log(feedback);
     return (
-        <div className='table' style={{ height: 400, width: '60%' }}>
+        <div className='table' style={{ height: 300, width: '45%' }}>
             <h2>Feedback Result</h2>
             <DataGrid
                 rows={feedback}
@@ -44,6 +44,10 @@ export default function FeedbackAdmin(){
                 pageSize={10}
                 rowsPerPageOptions={[5]}
                 checkboxSelection
+                onSelectionModelChange={()=>{
+                    console.log('check');
+                }}
+                
             />
         </div>
     )
