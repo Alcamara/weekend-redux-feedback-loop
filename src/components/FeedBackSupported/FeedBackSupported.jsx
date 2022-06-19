@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux";
+// Material UI
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function FeedBackSupported(){
     const [supportRating,setSupportRating] = useState(0)
@@ -19,31 +22,35 @@ export default function FeedBackSupported(){
             min='0' 
             max='5'/>
             <div>
-                <button
-                    onClick={()=>{
-                        history.push('/question2')
-                    }}
-                >
-                    PREVIOUS 
-                </button>
-                <button
-                    onClick={()=>{
-                    if(Number(supportRating)!== 0){
+                <ButtonGroup>
+                    <Button
+                        variant="contained"
+                        onClick={()=>{
+                            history.push('/question2')
+                        }}
+                    >
+                        PREVIOUS 
+                    </Button>
+                    <Button
+                        variant="contained"
+                        onClick={()=>{
+                        if(Number(supportRating)!== 0){
 
-                        dispatch({
-                            type: 'ADD_SUPPORT_FEEDBACK',
-                            payload: Number(supportRating)
-                        })
+                            dispatch({
+                                type: 'ADD_SUPPORT_FEEDBACK',
+                                payload: Number(supportRating)
+                            })
 
-                        history.push('/question4')
+                            history.push('/question4')
 
-                    } else {
-                        swal('Please enter a rating 1 - 5')
-                    }
-                    }}
-                >
-                    NEXT
-            </button>
+                        } else {
+                            swal('Please enter a rating 1 - 5')
+                        }
+                        }}
+                    >
+                        NEXT
+                </Button>
+                </ButtonGroup>
             </div>
         </div>
     )

@@ -11,6 +11,7 @@ app.use(express.static('build'));
 
 
 /** ---------- EXPRESS ROUTES ---------- **/
+//post route
 app.post('/feedback',(req,res)=>{
     console.log(req.body);
 
@@ -32,6 +33,11 @@ app.post('/feedback',(req,res)=>{
         }).catch((err)=>{
             console.log('Adding data to server failed', err);
         })
+})
+
+//get route
+app.get('feedback/admin',(req,res)=>{
+    
 })
 
 /** ---------- START SERVER ---------- **/

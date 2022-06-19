@@ -1,0 +1,13 @@
+.row{
+    font-size: 1.3rem;
+    width: 40%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.col{
+    margin-right: 10px;
+}
