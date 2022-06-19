@@ -39,7 +39,7 @@ app.post('/feedback',(req,res)=>{
 app.get('/feedback/admin',(req,res)=>{
     const sqlSelect = `
         SELECT * FROM "feedback"
-        ORDER BY "date" ASC;
+        ORDER BY "date" DESC;
     `
 
     pool.query(sqlSelect)
