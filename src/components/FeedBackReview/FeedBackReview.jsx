@@ -1,7 +1,10 @@
 import axios from "axios";
 import {useSelector} from 'react-redux' ;
-
 import { useHistory } from "react-router-dom";
+
+//Material UI
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function FeedBackReview(){
 
@@ -35,20 +38,24 @@ export default function FeedBackReview(){
                 <h3>Comment: <span>{feedback.comment}</span></h3>
             </div>
             <div>
-                <button
-                    onClick={()=>{
-                        history.push('/question4')
-                    }}
+                <ButtonGroup>
+                    <Button
+                    variant="contained"
+                        onClick={()=>{
+                            history.push('/question4')
+                        }}
+                        >
+                        PREVIOUS 
+                    </Button>
+                    <Button
+                    variant="contained"
+                        onClick={()=>{
+                            submitFeedback()
+                        }}
                     >
-                    PREVIOUS 
-                </button>
-                <button
-                    onClick={()=>{
-                        submitFeedback()
-                    }}
-                >
-                    SUBMIT
-                </button>
+                        SUBMIT
+                    </Button>
+                </ButtonGroup>
             </div>
         </div>
     )

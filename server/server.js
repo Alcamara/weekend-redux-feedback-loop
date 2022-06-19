@@ -11,6 +11,7 @@ app.use(express.static('build'));
 
 
 /** ---------- EXPRESS ROUTES ---------- **/
+//post route
 app.post('/feedback',(req,res)=>{
     console.log(req.body);
 
@@ -31,6 +32,22 @@ app.post('/feedback',(req,res)=>{
             res.sendStatus(200)
         }).catch((err)=>{
             console.log('Adding data to server failed', err);
+        })
+})
+
+//get route
+app.get('/feedback/admin',(req,res)=>{
+    const sqlSelect = `
+        SELECT * FROM "feedback"
+        ORDER BY "date" ASC;
+    `
+
+    pool.query(sqlSelect)
+        .then((result)=>{
+            res.send(result.rows)
+        }).catch((err)=>{
+            console.log('Get request failed', err);
+            res.sendStatus(500)
         })
 })
 

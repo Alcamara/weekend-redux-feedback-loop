@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
 //components
 import FeedbackWelcome from '../FeedbackWelcome/FeedbackWelcome';
 import FeedBackFeeling from '../FeedBackFeeling/FeedBackFeeling';
@@ -11,8 +12,27 @@ import FeedBackSupported from '../FeedBackSupported/FeedBackSupported';
 import FeedBackComment from '../FeedBackComment/FeedBackComment';
 import FeedBackReview from '../FeedBackReview/FeedBackReview';
 import FeedBackThankYou from '../FeedBackThankYou/FeedBackThankYou';
+import FeedbackAdmin from '../FeedbackAdmin/FeedbackAdmin';
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+
+    axios({
+      url:'/feedback/admin',
+      method:'GET'
+    }).then((res)=>{
+      
+       dispatch({
+        type:'ADD_DATA',
+        payload: res.data
+       })
+
+    })
+
+  },[])
 
   return (
 
@@ -60,7 +80,10 @@ function App() {
             <FeedBackThankYou/>
           </Route>
 
-          
+          <Route exact path='/admin'>
+            <FeedbackAdmin/>
+          </Route>
+
         </div>
     </Router>
   );
