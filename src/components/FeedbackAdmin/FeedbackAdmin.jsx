@@ -36,7 +36,7 @@ export default function FeedbackAdmin(){
     const feedback = useSelector(store => store.feedbackList)
      console.log(feedback);
     return (
-        <div className='table' style={{ height: 300, width: '45%' }}>
+        <div className='table' style={{ height: 300, width: '60%' }}>
             <h2>Feedback Result</h2>
             <DataGrid
                 rows={feedback}

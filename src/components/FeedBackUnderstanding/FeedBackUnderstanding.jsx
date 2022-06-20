@@ -18,8 +18,7 @@ export default function FeedBackUnderstanding(){
             <h2>How well are you understanding the content?</h2>
             <TextField
              margin="normal"
-             min='0'
-             max='5'
+             InputProps={{ inputProps: { min: 0, max: 5 } }}
              onChange={(evt)=>{
                 setUnderstandingRating(evt.target.value)
             }} 

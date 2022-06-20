@@ -18,8 +18,7 @@ export default function FeedBackFeeling(){
             margin="normal"
              onChange={(evt)=> setFeelingRating(evt.target.value)}
             type="number" 
-            min='0' 
-            max='5' />
+            InputProps={{ inputProps: { min: 0, max: 5 } }} />
             <div>
                 <Button 
                     variant="contained"
